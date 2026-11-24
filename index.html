@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Тихий берег — загородный отель у озера. Номера, услуги и тестовое бронирование.">
+<title>Тихий берег — загородный отель</title>
+<link rel="stylesheet" href="style.css"><script defer src="hotel.js"></script>
+</head>
+<body>
+<header class="bar"><a class="brand" href="#top"><span>Тихий берег</span><small>ЗАГОРОДНЫЙ ОТЕЛЬ</small></a><nav aria-label="Навигация"><a href="#rooms">Номера</a><a href="#services">Услуги</a></nav><a class="button outline" href="#booking">Бронирование</a></header>
+<main id="top">
+<section class="hero"><div class="wrap"><p class="eyebrow">КАРЕЛИЯ · ОТЕЛЬ У ОЗЕРА</p><h1>Там, где<br>слышно тишину</h1><p class="lead">Загородный отель среди сосен. Утро с видом на озеро, прогулки по лесу и тёплый вечер у камина.</p></div></section>
+<div class="wrap booking-wrap">
+<form id="booking" class="booking">
+<label>Заезд<input id="arrival" type="date" required></label>
+<label>Выезд<input id="departure" type="date" required></label>
+<label>Гости<select id="guests"><option value="1">1 гость</option><option value="2" selected>2 гостя</option><option value="3">3 гостя</option><option value="4">4 гостя</option></select></label>
+<button>Подобрать номер</button>
+</form>
+</div>
+<section id="rooms" class="wrap section">
+<p class="eyebrow">ПРОЖИВАНИЕ</p><h2>Номера</h2><p id="room-status" role="status" class="muted">Три категории номеров для поездки вдвоём или отдыха с семьёй.</p>
+<div class="cards" id="room-list"></div>
+</section>
+<section id="services" class="service-section"><div class="wrap section"><p class="eyebrow">ОТДЫХ В ОТЕЛЕ</p><h2>Услуги</h2><div class="services">
+<article><span class="service-line"></span><h3>Завтрак</h3><p>Горячие блюда и свежая выпечка. Каждый день с 8:00 до 11:00.</p><strong>Включён в проживание</strong></article>
+<article><span class="service-line"></span><h3>Сауна</h3><p>Отдельная сауна с комнатой отдыха. По предварительной записи.</p><strong>2 500 ₽ / час</strong></article>
+<article><span class="service-line"></span><h3>Велосипеды</h3><p>Прокат для прогулок по лесным тропам и вдоль берега.</p><strong>800 ₽ / день</strong></article>
+</div></div></section>
+</main>
+<footer class="wrap footer"><div class="brand"><span>Тихий берег</span><small>Студия ATTO</small></div><p>Заезд с 15:00 · Выезд до 12:00</p><a href="#booking">Выбрать даты</a></footer>
+<dialog id="reservation" aria-labelledby="reservation-title"><div class="dialog-head"><h2 id="reservation-title">Бронирование</h2><button id="close" type="button" class="close" aria-label="Закрыть">×</button></div>
+<form id="confirmation"><p id="summary"></p><p class="muted">Тестовая бронь сохраняется в этом браузере. Оплата и отправка заявки в отель отключены.</p><button>Подтвердить тестовую бронь</button></form>
+<div id="receipt" hidden><p id="receipt-text" role="status"></p><button id="done" type="button">Готово</button></div>
+</dialog>
+<template id="room-template"><article class="card"><img width="600" height="400" loading="lazy" alt=""><div class="card-content"><p class="spec"></p><h3></h3><p class="description"></p><div class="card-bottom"><div class="price"><strong></strong><span> / ночь</span></div><button type="button" class="outline">Забронировать</button></div></div></article></template>
+</body></html>
